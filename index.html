@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - BINGO CASINO</title>
+<meta name="description" content="Privacy Policy for the BINGO CASINO mobile application, developed by CIPHER NOVA.">
+<style>
+  :root {
+    --bg: #04060d;
+    --card: rgba(15, 20, 32, 0.55);
+    --text: #e6ecf5;
+    --muted: #8a93a8;
+    --accent: #ffc857;
+    --accent-2: #ff5e7e;
+    --border: rgba(255, 200, 87, 0.22);
+  }
+  * { box-sizing: border-box; }
+  html, body { overflow-x: hidden; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    background: #04060d;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  /* ===== BACKGROUND LAYER: gold/red light orbs ===== */
+  .bg-aurora {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at top, #1a0f08 0%, #04060d 60%);
+  }
+  .bg-aurora::before,
+  .bg-aurora::after {
+    content: "";
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.4;
+    animation: float 18s ease-in-out infinite;
+  }
+  .bg-aurora::before {
+    top: -10%;
+    left: -10%;
+    background: radial-gradient(circle, #ffc857 0%, transparent 70%);
+  }
+  .bg-aurora::after {
+    bottom: -15%;
+    right: -10%;
+    background: radial-gradient(circle, #ff5e7e 0%, transparent 70%);
+    animation-delay: -9s;
+  }
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(40px, -30px) scale(1.15); }
+  }
+
+  /* ===== BACKGROUND LAYER: grid ===== */
+  .bg-grid {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-image:
+      linear-gradient(rgba(255, 200, 87, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 200, 87, 0.06) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    animation: gridShift 20s linear infinite;
+  }
+  @keyframes gridShift {
+    from { background-position: 0 0; }
+    to { background-position: 50px 50px; }
+  }
+
+  /* ===== BACKGROUND LAYER: floating bingo ball particles ===== */
+  #particles {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    padding: 80px 24px 60px;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(255, 200, 87, 0.05) 0%, transparent 100%);
+    pointer-events: none;
+  }
+  header h1 {
+    margin: 0 0 12px 0;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: linear-gradient(120deg, #ffffff 0%, #ffc857 50%, #ff5e7e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 40px rgba(255, 200, 87, 0.3);
+    position: relative;
+    z-index: 1;
+  }
+  header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+  }
+  header .tag {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 4px 14px;
+    font-family: "Courier New", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(255, 200, 87, 0.05);
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+  }
+
+  main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ===== GLASSMORPHISM CARDS ===== */
+  section {
+    background: var(--card);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 26px 30px;
+    margin-bottom: 22px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.6;
+  }
+  section:hover {
+    border-color: rgba(255, 200, 87, 0.4);
+    transform: translateY(-2px);
+  }
+
+  h2 {
+    color: var(--accent);
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+    text-shadow: 0 0 20px rgba(255, 200, 87, 0.4);
+  }
+  h3 {
+    color: #f0d9a3;
+    font-size: 1.02rem;
+    margin-top: 22px;
+    font-weight: 600;
+  }
+  p, li { color: #c4cad8; }
+  strong { color: var(--text); }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: text-shadow 0.2s ease;
+  }
+  a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 12px var(--accent);
+  }
+
+  ul { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  li::marker { color: var(--accent); }
+
+  .muted { color: var(--muted); font-size: 0.9rem; }
+
+  .contact-box {
+    background: linear-gradient(135deg, rgba(255, 200, 87, 0.07), rgba(255, 94, 126, 0.07));
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    border-radius: 8px;
+    margin-top: 14px;
+    font-family: "Courier New", monospace;
+    font-size: 0.92rem;
+    box-shadow: 0 0 30px rgba(255, 200, 87, 0.05) inset;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 24px;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    background: rgba(4, 6, 13, 0.6);
+    backdrop-filter: blur(10px);
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 2px,
+      rgba(255, 200, 87, 0.012) 3px,
+      rgba(255, 200, 87, 0.012) 4px
+    );
+  }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.7rem; }
+    section { padding: 22px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+<canvas id="particles"></canvas>
+
+<header>
+  <span class="tag">// ENCRYPTED DOCUMENT</span>
+  <h1>PRIVACY POLICY</h1>
+  <p>BINGO CASINO · CIPHER NOVA</p>
+  <p class="muted">Last updated: May 25, 2026</p>
+</header>
+
+<main>
+
+<section>
+  <h2>1. Introduction</h2>
+  <p>At <strong>CIPHER NOVA</strong> (hereinafter, "we," "us," "our," or "the Company"), we respect your privacy and are committed to protecting the personal data of users of our mobile application <strong>BINGO CASINO</strong> (hereinafter, "the App").</p>
+  <p>This Privacy Policy describes what information we collect, how we use it, who we share it with, and the rights you have regarding your personal data. By downloading, installing, or using the App, you agree to the practices described in this document.</p>
+</section>
+
+<section>
+  <h2>2. Data Controller</h2>
+  <p>The data controller responsible for the processing of your personal data is:</p>
+  <div class="contact-box">
+    <strong>CIPHER NOVA</strong><br>
+    Escaldes-Engordany, Principality of Andorra<br>
+    Email: <a href="mailto:operacionesinternacionalescipher@gmail.com">operacionesinternacionalescipher@gmail.com</a>
+  </div>
+</section>
+
+<section>
+  <h2>3. Information We Collect</h2>
+  <p>To provide our services, we may collect the following types of information:</p>
+
+  <h3>3.1 Information you provide directly</h3>
+  <ul>
+    <li>Username or in-game alias.</li>
+    <li>Email address (if you register or contact support).</li>
+    <li>Communications you send to us (questions, bug reports, support requests).</li>
+  </ul>
+
+  <h3>3.2 Information collected automatically</h3>
+  <ul>
+    <li>Device identifiers (advertising ID, unique identifiers).</li>
+    <li>Device model, operating system, and version.</li>
+    <li>Language and country.</li>
+    <li>Usage data: games played, session length, errors, and performance.</li>
+    <li>Game statistics: virtual coins accumulated, levels reached, achievements.</li>
+    <li>Approximate IP address (for analytics and fraud prevention).</li>
+    <li>Crash and diagnostic data (crash reports).</li>
+  </ul>
+
+  <h3>3.3 Purchase information</h3>
+  <p>If you make purchases within the App (virtual coin packs, ad removal, or other items), transactions are processed by <strong>Google Play</strong>. We do not store or have access to your card details or payment method.</p>
+</section>
+
+<section>
+  <h2>4. How We Use Your Information</h2>
+  <p>We use the information we collect for the following purposes:</p>
+  <ul>
+    <li>To operate, maintain, and improve the App.</li>
+    <li>To personalize your gameplay experience.</li>
+    <li>To manage your progress, virtual coins, and achievements.</li>
+    <li>To analyze how the App is used and how it performs.</li>
+    <li>To display relevant advertising (where the App includes ads).</li>
+    <li>To detect, prevent, and resolve technical issues, fraud, or misuse.</li>
+    <li>To respond to user requests and inquiries.</li>
+    <li>To comply with applicable legal obligations.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>5. Legal Basis for Processing</h2>
+  <p>The processing of your personal data is based on:</p>
+  <ul>
+    <li><strong>Performance of a contract:</strong> to provide you with the services of the App.</li>
+    <li><strong>Consent:</strong> which you give when installing and using the App, as well as when granting specific permissions.</li>
+    <li><strong>Legitimate interests:</strong> to improve our services, prevent fraud, and ensure security.</li>
+    <li><strong>Compliance with legal obligations</strong> applicable to the data controller.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>6. Third-Party Services</h2>
+  <p>The App may integrate third-party services that collect information for the purposes described in their respective privacy policies. These may include:</p>
+  <ul>
+    <li><strong>Google Play Services</strong> – <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+    <li><strong>Google AdMob</strong> (advertising) – <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Ads policy</a></li>
+    <li><strong>Google Analytics for Firebase</strong> – <a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener">Firebase policy</a></li>
+    <li><strong>Firebase Crashlytics</strong> – <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy</a></li>
+    <li><strong>Unity Ads / Unity Analytics</strong> (where applicable) – <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">Unity policy</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>7. Sharing Information with Third Parties</h2>
+  <p>We do not sell or rent your personal data. We may share information only in the following cases:</p>
+  <ul>
+    <li>With service providers acting as data processors (analytics, advertising, hosting).</li>
+    <li>When necessary to comply with a legal obligation or a request from a competent authority.</li>
+    <li>To protect the rights, property, or safety of CIPHER NOVA, its users, or third parties.</li>
+    <li>In connection with a corporate transaction (merger, acquisition, or sale of assets), with prior notice to affected users.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>8. International Data Transfers</h2>
+  <p>Some of our service providers may be located outside the Principality of Andorra or the European Economic Area. In those cases, we ensure that appropriate safeguards are in place, such as the Standard Contractual Clauses approved by the European Commission, or other legally recognized mechanisms.</p>
+</section>
+
+<section>
+  <h2>9. Data Retention</h2>
+  <p>We retain your personal data only for as long as necessary to fulfill the purposes described above or to comply with applicable legal obligations. Usage and diagnostic data are typically retained for a maximum period of 24 months, unless a longer retention period is required by law.</p>
+</section>
+
+<section>
+  <h2>10. Data Security</h2>
+  <p>We apply reasonable technical and organizational measures to protect your information against unauthorized access, alteration, disclosure, or destruction. However, no system is completely secure, and we cannot guarantee the absolute security of any information.</p>
+</section>
+
+<section>
+  <h2>11. Your Rights</h2>
+  <p>In accordance with <strong>Andorran Qualified Law 29/2021 of October 28, on the protection of personal data</strong> and, where applicable, <strong>EU Regulation 2016/679 (GDPR)</strong>, you have the following rights:</p>
+  <ul>
+    <li>Access to your personal data.</li>
+    <li>Rectification of inaccurate data.</li>
+    <li>Restriction of processing.</li>
+    <li>Objection to processing.</li>
+    <li>Data portability.</li>
+  </ul>
+  <p>To exercise these rights, you can contact us at <a href="mailto:operacionesinternacionalescipher@gmail.com">operacionesinternacionalescipher@gmail.com</a>.</p>
+</section>
+
+<section>
+  <h2>12. Children's Privacy</h2>
+  <p>The App is not directed to children under 13 (or the equivalent minimum age in your jurisdiction). We do not knowingly collect personal information from children. If we become aware that data has been collected from a child without proper parental consent, we will delete it as soon as possible. If you believe a child has provided us with information, please contact us.</p>
+</section>
+
+<section>
+  <h2>13. Nature of the Game and Responsible Play</h2>
+  <p>BINGO CASINO is a <strong>social entertainment game</strong> that uses only virtual coins with no real monetary value. The App <strong>does not offer real-money gambling</strong> and does not award prizes redeemable for money or any other items of economic value.</p>
+  <p>In-app purchases allow you to acquire virtual coins or other digital items for use within the game only. These purchases are non-refundable except as required by applicable law.</p>
+  <p>Success in BINGO CASINO does not imply skill at real-money gambling. We encourage you to play responsibly and in moderation.</p>
+</section>
+
+<section>
+  <h2>14. App Permissions</h2>
+  <p>The App may request certain permissions on your device in order to function properly (for example, network access, storage, or advertising identifiers). You can revoke these permissions at any time through your device settings.</p>
+</section>
+
+<section>
+  <h2>15. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal reasons. The current version will always be available on this page, with the date of the latest update clearly indicated. We encourage you to review it periodically.</p>
+</section>
+
+<section>
+  <h2>16. Contact</h2>
+  <p>If you have any questions, comments, or requests regarding this Privacy Policy or the processing of your personal data, you can reach us at:</p>
+  <div class="contact-box">
+    <strong>CIPHER NOVA</strong><br>
+    Escaldes-Engordany, Principality of Andorra<br>
+    Email: <a href="mailto:operacionesinternacionalescipher@gmail.com">operacionesinternacionalescipher@gmail.com</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 CIPHER NOVA · All rights reserved.
+</footer>
+
+<script>
+  // Floating bingo balls with numbers
+  (function() {
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let w, h, particles;
+
+    function rand(min, max) { return Math.random() * (max - min) + min; }
+
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+      const count = Math.min(40, Math.floor((w * h) / 38000));
+      particles = [];
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          num: Math.floor(rand(1, 76)),
+          r: rand(10, 18),
+          v: rand(0.1, 0.4),
+          drift: rand(-0.2, 0.2),
+          o: rand(0.15, 0.4),
+          hue: Math.random() > 0.5 ? 42 : 350
+        });
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      for (const p of particles) {
+        // Halo
+        ctx.shadowColor = `hsla(${p.hue}, 90%, 65%, 0.7)`;
+        ctx.shadowBlur = 14;
+        // Ball
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${p.hue}, 90%, 60%, ${p.o})`;
+        ctx.fill();
+        // Border
+        ctx.shadowBlur = 0;
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = `hsla(${p.hue}, 100%, 80%, ${p.o + 0.2})`;
+        ctx.stroke();
+        // Number
+        ctx.fillStyle = `hsla(0, 0%, 100%, ${p.o + 0.3})`;
+        ctx.font = `bold ${Math.floor(p.r * 0.9)}px Arial, sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(p.num, p.x, p.y);
+
+        p.y -= p.v;
+        p.x += p.drift;
+        if (p.y < -30) {
+          p.y = h + 30;
+          p.x = Math.random() * w;
+          p.num = Math.floor(rand(1, 76));
+        }
+        if (p.x < -30) p.x = w + 30;
+        if (p.x > w + 30) p.x = -30;
+      }
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+    draw();
+  })();
+</script>
+
+</body>
+</html>
